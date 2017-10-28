@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SF Tree Data</title>
+	<link href="css/styles.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
+</head>
+
+<body>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="js/js.js"></script>
+<div id="main">
+	<div id="controls">
+		<h1>San Francisco Tree Data</h1>
+		<h3>Kali Cornn | CS 448B Assignment 3</h3>
+
+		<div>Click on two points on the map to create two circles.</div>
+		<div>Move a circle by dragging its center.</div>
+		<div>Adjust radius of each circle and filter by tree species as desired.</div>
+		<br>
+		<div class="radius-div" id="pA-adj">
+			<span>Circle 1 Radius</span>
+			<form oninput="amount.value = range.value">
+				0 <input id="radiusA" name="range" type="range" min="0" max="6" value="1" step="0.1"> 6
+				<br>
+				<span>Current Radius:</span> <output name="amount" for="radiusA">1</output> mile(s)
+			</form>	
+		</div>
+		<br>
+		<div class="radius-div" id="pB-adj">
+			<span>Circle 2 Radius</span>
+			<form oninput="amount.value = range.value">
+				0 <input id="radiusB" name="range" type="range" min="0" max="6" value="1" step="0.1"> 6
+				<br>
+				<span>Current Radius:</span> <output name="amount" for="radiusB">1</output> mile(s)
+			</form>
+		</div>
+		<br>
+		<div>
+			<span>Filter by Species</span>
+			<br>
+			<select id="speciesoption">
+				<option value="all">all</option>
+			</select>
+			<br>
+			<span>Filter by Plot Size</span>
+			<br>
+			<select id="plotsizeoption">
+				<option value="all">all</option>
+			</select>
+		</div>
+	</div>
+	<div id="main-container"></div>
+</div>
+
+</body>
+</html>

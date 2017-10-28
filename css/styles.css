@@ -1,0 +1,27 @@
+body,
+html {
+	margin:0;
+}
+#controls {
+  display:inline-block;
+  float:left;
+  margin: 20px 0 0 20px;
+  width: 35%;
+}
+
+h1,h3 {
+  margin: 0;
+}
+
+#controls span {
+  font-weight: bold;
+}
+
+#controls select {
+  width: 200px;
+}
+
+#main-container {
+	display:inline-block;
+  float:right;
+}
