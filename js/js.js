@@ -31,6 +31,8 @@ function parse(d) {
     species: d.qSpecies,
     address: d.qAddress,
     plot: d.PlotSize,
+    siteinfo : d.qSiteInfo,
+    dbh : +d.DBH,
 		val: [+d.Longitude,+d.Latitude]
 	};
 }
@@ -246,8 +248,19 @@ function drawPlot(data,filters) {
       .attr("cy", function(one) { 
         return projection(one.val)[1]; 
       })
+      // Source for jquery.tipsy.js and tipsy.css: 
+      // http://bl.ocks.org/ilyabo/1373263
+      $('svg circle.cs').tipsy({
+        gravity: 'w',
+        html:true,
+        title: function (){
+          var d = this.__data__, species = d.species, address=d.address, siteinfo = d.siteinfo, plot = d.plot, dbh = d.dbh;
+          return '<b>Species:</b> ' + species + '<br><b>Address:</b> ' 
+          + address + '<br><b>Site Info:</b> ' + siteinfo + '<br><b>Plot Size:</b> ' 
+          + plot + '<br><b>DBH:</b> ' + dbh + ' inches';
+        }
+      });
   pts.exit().remove();
-
 }
 
 // FILTERING
